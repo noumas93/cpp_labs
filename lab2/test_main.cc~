@@ -1,0 +1,10 @@
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+#include "time.h"
+
+TEST_CASE("    "){
+  
+  Time sleeptime {15,14,13};
+  CHECK(is_valid(sleeptime));
+  
+}

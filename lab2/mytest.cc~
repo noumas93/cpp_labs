@@ -1,0 +1,23 @@
+include "catch.hpp"
+#include "time.h"
+ 
+TEST_CASE("    "){
+  Time validtime1 {15,14,13};
+  Time validtime2 {00,00,00};
+  Time invalidtime1 {42,99,70};
+  Time invalidtime2 {-1,-1,-1};
+  SECTION("Testing valid time"){
+ 
+  CHECK(is_valid(validtime1));
+  CHECK(is_valid(validtime2));
+  }
+ 
+  SECTION("Testing invalid time"){
+  CHECK_FALSE(is_valid(invalidtime1));
+  CHECK_FALSE(is_valid(invalidtime2));
+  }
+ 
+  SECTION("Testing tostring"){
+  CHECK(to_string(validtime1)== "15:14:13");
+  }
+}
